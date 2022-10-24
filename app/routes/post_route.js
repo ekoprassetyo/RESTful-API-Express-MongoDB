@@ -1,11 +1,12 @@
 /*
     * Parameter app diisikan object yang sudah didefiniskan di app.js
-    * Router menampung method router yang ada pada library express
+    * Pada variable router menampung method/function router yang ada pada library express
 */
 
+const posts = require('../controllers/post_controller')
+const router = require('express').Router()
+
 module.exports = (app) => {
-    const posts = require('../controllers/post_controller')
-    const router = require('express').Router()
 
     router.get('/posts', posts.findAll)
     router.post('/post', posts.create)
